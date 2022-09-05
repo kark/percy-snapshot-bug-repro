@@ -1,5 +1,8 @@
 const percySnapshot = require("@percy/puppeteer");
 const { getDocument, queries } = require("pptr-testing-library");
+/* 
+// uncomment to run in non-headless mode
+
 const puppeteer = require("puppeteer");
 let browser;
 let page;
@@ -8,7 +11,7 @@ jest.setTimeout(20000);
 
 beforeEach(async () => {
   browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     slowMo: 100, // Launching the browser in slow motion is necessary due to race conditions. Otherwise browser closes prematurely and tests fail.
   });
   page = await browser.newPage();
@@ -16,7 +19,7 @@ beforeEach(async () => {
 });
 afterEach(async () => {
   await browser.close();
-});
+}); */
 
 describe("Interactive", () => {
   it("applies changes to global and local theme provider", async () => {
