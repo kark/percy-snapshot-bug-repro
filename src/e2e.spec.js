@@ -22,6 +22,9 @@ afterEach(async () => {
 }); */
 
 describe("Interactive", () => {
+  beforeAll(async () => {
+    await page.goto(URL);
+  });
   it("applies changes to global and local theme provider", async () => {
     const doc = await getDocument(page);
     await expect(page).toMatch("Hello");
