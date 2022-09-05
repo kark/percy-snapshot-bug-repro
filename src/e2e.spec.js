@@ -12,15 +12,13 @@ beforeEach(async () => {
     slowMo: 100, // Launching the browser in slow motion is necessary due to race conditions. Otherwise browser closes prematurely and tests fail.
   });
   page = await browser.newPage();
+  await page.goto(URL);
 });
 afterEach(async () => {
   await browser.close();
 });
 
 describe("Interactive", () => {
-  beforeAll(async () => {
-    await page.goto(URL);
-  });
   it("applies changes to global and local theme provider", async () => {
     const doc = await getDocument(page);
     await expect(page).toMatch("Hello");
