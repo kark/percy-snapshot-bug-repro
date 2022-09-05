@@ -1,6 +1,6 @@
 const percySnapshot = require("@percy/puppeteer");
-import { getDocument, queries } from "pptr-testing-library";
-import puppeteer from "puppeteer";
+const { getDocument, queries } = require("pptr-testing-library");
+const puppeteer = require("puppeteer");
 let browser;
 let page;
 
@@ -23,6 +23,7 @@ describe("Interactive", () => {
   });
   it("applies changes to global and local theme provider", async () => {
     const doc = await getDocument(page);
+    await expect(page).toMatch("Hello");
     await percySnapshot(page, "before theme change");
     // change theme
     const themeChangeButton = await queries.getByText(doc, "change theme");
@@ -33,14 +34,3 @@ describe("Interactive", () => {
     await percySnapshot(page, "after theme change");
   });
 });
-
-/* describe("app", () => {
-  beforeAll(async () => {
-    await page.goto(URL);
-  });
-
-  it("App", async () => {
-    await expect(page).toMatch("Hello");
-    await percySnapshot(page, "App");
-  });
-}); */
