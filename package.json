@@ -1,36 +1,25 @@
 {
-  "name": "emotion-css-variables",
+  "name": "css-variables",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "________________________________codesandbox________________________________": "",
     "dev": "yarn build && yarn preview",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview --host --port 3000",
     "start": "vite --host --port 3000",
     "test:e2e": "yarn jest -c jest.config.js",
     "vrt": "yarn percy exec -- yarn test:e2e",
     "vrt:local": "PERCY_TOKEN=$(grep 'PERCY_TOKEN.*' .env | sed 's/.*=//') PERCY_BRANCH=master yarn percy exec -- yarn test:e2e"
   },
-  "dependencies": {
-    "@emotion/react": "11.9.3",
-    "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.9.2",
     "@percy/cli": "1.6.1",
     "@percy/puppeteer": "2.0.2",
-    "@types/lodash": "^4.14.182",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
     "jest": "27.4.5",
     "jest-puppeteer": "^6.0.3",
     "pptr-testing-library": "^0.7.0",
     "puppeteer": "15.4.0",
-    "typescript": "^4.6.4",
     "vite": "^3.0.0"
   }
 }
