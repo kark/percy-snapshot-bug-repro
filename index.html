@@ -3,36 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
     <style>
-      .App {
-        font-family: sans-serif;
-        text-align: center;
+      h1 {
+        color: 10px;
       }
     </style>
   </head>
   <body>
-    <div class="App">
-      <button id="button">change theme</button>
-      <h1>Hello Percy 👋</h1>
-    </div>
+    <h1>Hello 👋</h1>
     <script>
       const h1 = document.querySelector("h1");
-      const button = document.querySelector("#button");
       const root = document.querySelector(":root");
 
       window.addEventListener("load", () => {
-        root.style.setProperty("--br", "20px");
-        root.style.setProperty("--color", "palegoldenrod");
-        h1.style.backgroundColor = "var(--color)";
-        h1.style.borderRadius = "var(--br)";
-        h1.style.height = "calc(2*50px)";
-        h1.style.borderBottomRightRadius = 0;
-      });
-      button.addEventListener("click", () => {
-        root.style.setProperty("--br", "60px");
-        root.style.setProperty("--color", "tomato");
-        root.style.setAttribute("data-theme", "dark");
+        root.style.setProperty("--primary", "red");
+        h1.style.color = "var(--primary)";
       });
     </script>
   </body>
